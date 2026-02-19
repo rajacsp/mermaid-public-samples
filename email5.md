@@ -3,13 +3,29 @@
 ## Main Workflow Diagram
 
 ```mermaid
-graph LR
+graph TD
     INBOX["📧 Teams Channel Message<br/>Message 1<br/>Message 2<br/>Message 3"]
     
-    EXTRACT["<b>Title</b><br/>Tag: New Joinee<br/>━━━━━━━━━━━━━━━━━━━━━━<br/>Summary line 1<br/>Summary line 2<br/>━━━━━━━━━━━━━━━━━━━━━━<br/>Accept | Reject | Review | System Error"]
+    EXTRACT["<b>Title</b><br/>Tag: New Joinee<br/>━━━━━━━━━━━━━━━━━━━━━━<br/>Summary line 1<br/>Summary line 2<br/>━━━━━━━━━━━━━━━━━━━━━━"]
+    
+    ACCEPT["Accept"]
+    REJECT["Reject"]
+    REVIEW["Review"]
+    ERROR["System Error"]
+    
+    REASON1["Reason"]
+    REASON2["Store Incident in logs"]
     
     PROCESS["Service Catalog"]
     
     INBOX --> EXTRACT
-    EXTRACT --> PROCESS
+    EXTRACT --> ACCEPT
+    EXTRACT --> REJECT
+    EXTRACT --> REVIEW
+    EXTRACT --> ERROR
+    ACCEPT --> PROCESS
+    REJECT --> REASON1
+    REASON1 --> REASON2
+    REVIEW --> REASON1
+    ERROR --> REASON1
 ```
