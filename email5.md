@@ -39,6 +39,8 @@ graph TD
 
 ```mermaid
 pie title Weekly Dashboard - Tickets Page
-    "Approve" : 50
-    "Req" : 50
+    "Approved" : 45
+    "Rejected" : 25
+    "Manual Review" : 20
+    "System Error" : 10
 ```
