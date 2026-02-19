@@ -38,13 +38,7 @@ graph TD
 ## Weekly Dashboard Workflow
 
 ```mermaid
-graph LR
-    DASHBOARD["<b>Weekly Dashboard</b><br/>━━━━━━━━━━━━━━━━━━<br/>Tickets Page<br/>Approve | Req<br/>━━━━━━━━━━━━━━━━━━"]
-    
-    SYSECO["Sys/Eco"]
-    
-    STORE["Store Inc"]
-    
-    DASHBOARD --> SYSECO
-    SYSECO --> STORE
+pie title Weekly Dashboard - Tickets Page
+    "Approve" : 50
+    "Req" : 50
 ```
