@@ -86,24 +86,4 @@ graph TD
     STORE --> DASHBOARD["📊 Weekly Dashboard<br/>- Approved Count<br/>- Rejected Count<br/>- Manual Review Count<br/>- Error Count"]
     
     DASHBOARD --> DONE["✓ Done"]
-    
-    style SCHEDULER fill:#e3f2fd
-    style FETCH fill:#e3f2fd
-    style LOOP fill:#fff3e0
-    style EXTRACT fill:#fff3e0
-    style LLM fill:#f3e5f5
-    style SEARCH fill:#f3e5f5
-    style RETRIEVE fill:#f3e5f5
-    style GENERATE fill:#f3e5f5
-    style TITLE_BOX fill:#fce4ec
-    style DECISION fill:#fff9c4
-    style ACCEPT fill:#c8e6c9
-    style REJECT fill:#ffccbc
-    style REVIEW fill:#ffe0b2
-    style ERROR fill:#ffccbc
-    style PROCESS fill:#c8e6c9
-    style REASON fill:#ffccbc
-    style STORE fill:#e0e0e0
-    style DASHBOARD fill:#b3e5fc
-    style DONE fill:#c8e6c9
 ```
