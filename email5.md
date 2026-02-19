@@ -4,37 +4,12 @@
 
 ```mermaid
 graph LR
-    INBOX["<b>📧 Email Inbox</b><br/>━━━━━━━━━━━━━━<br/>Message 1<br/>Message 2<br/>Message 3<br/>━━━━━━━━━━━━━━"]
-    INBOX --> EXTRACT["Extract Title<br/>Scan<br/>Pre"]
+    INBOX["📧 Teams Channel Message<br/>Message 1<br/>Message 2<br/>Message 3"]
     
-    EXTRACT --> TAGS["🏷️ Tag Assignment"]
-    TAGS --> TAG1["New Joiner"]
-    TAGS --> TAG2["File Request"]
-    TAGS --> TAG3["Termination"]
+    EXTRACT["<b>Title</b><br/>Tag: New Joinee<br/>━━━━━━━━━━━━━━━━━━━━━━<br/>Summary line 1<br/>Summary line 2<br/>━━━━━━━━━━━━━━━━━━━━━━<br/>Accept | Reject | Review | System Error"]
     
-    EXTRACT --> SCAN["Scan"]
-    SCAN --> DONE["Done"]
-    DONE --> REG1["Register"]
-    REG1 --> MEMCMD["Memcmd"]
+    PROCESS["Service Catalog"]
     
-    REG1 --> PRIORITY["Priority Check<br/>Sys/Eco<br/>Standard<br/>DB/E"]
-    PRIORITY --> REG2["Register"]
-    REG2 --> REASON1["Reason"]
-    REASON1 --> REASON2["Reason"]
-    
-    MEMCMD --> STORE["💾 Store Inc"]
-    REASON2 --> STORE
-    
-    ERROR["⚠️ System Error"]
-    ERROR --> STORE
-    
-    DASHBOARD["📈 Weekly Dashboard"]
-    DASHBOARD --> TICKETS["Tickets Page"]
-    TICKETS --> SYSECO["Sys/Eco"]
-    SYSECO --> STORE
-    
-    TICKETS --> APPROVE["Approve"]
-    APPROVE --> REQ1["Req"]
-    REQ1 --> REQ2["Req"]
-    REQ2 --> STORE
+    INBOX --> EXTRACT
+    EXTRACT --> PROCESS
 ```
