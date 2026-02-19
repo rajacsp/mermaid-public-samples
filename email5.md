@@ -16,6 +16,8 @@ graph TD
     REASON1["Reason"]
     REASON2["Store Incident in logs"]
     
+    DONE["Done"]
+    
     PROCESS["Service Catalog"]
     
     INBOX --> EXTRACT
@@ -24,8 +26,25 @@ graph TD
     EXTRACT --> REVIEW
     EXTRACT --> ERROR
     ACCEPT --> PROCESS
+    PROCESS --> DONE
+    DONE --> REASON2
     REJECT --> REASON1
     REASON1 --> REASON2
     REVIEW --> REASON1
     ERROR --> REASON1
+```
+
+
+## Weekly Dashboard Workflow
+
+```mermaid
+graph LR
+    DASHBOARD["<b>Weekly Dashboard</b><br/>━━━━━━━━━━━━━━━━━━<br/>Tickets Page<br/>Approve | Req<br/>━━━━━━━━━━━━━━━━━━"]
+    
+    SYSECO["Sys/Eco"]
+    
+    STORE["Store Inc"]
+    
+    DASHBOARD --> SYSECO
+    SYSECO --> STORE
 ```
